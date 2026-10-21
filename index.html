@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>小风减脂｜销售合伙人招募</title>
+<meta name="description" content="小风减脂 Sales Partner 招募：零经验也OK，帮忙引流就有 commission，每单最高 RM200。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="小风减脂｜销售合伙人招募">
+<meta property="og:description" content="小风减脂 Sales Partner 招募：零经验也OK，帮忙引流就有 commission，每单最高 RM200。">
+<meta property="og:image" content="images/cover.jpg">
+<meta name="theme-color" content="#c8102e">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Noto+Sans+SC:wght@400;500;700;900&display=swap">
+<style id="page-css">
+  /* Layout: 红色封面带 + 白底单列卡片流（线上招募PPT），佣金数字用窄体大字突出；内容存于 content.js，网址加 #edit 可编辑 */
+  :root{
+    --bg:#ffffff; --surface:#f8f4f3; --card:#ffffff; --ink:#1d1514; --muted:#6b5e5c; --line:#eadfdd;
+    --red:#c8102e; --red-deep:#9b0c23; --red-soft:#fcebee; --red-ink:#8a0a1f; --on-red:#ffffff;
+    --warn-bg:#fff7e6; --warn-line:#e0a100; --gold:#d9a400; --silver:#a1a1a8; --bronze:#b8733f;
+    --shadow:0 1px 2px rgba(60,10,15,.05),0 6px 20px rgba(60,10,15,.06);
+    --f-body:"Noto Sans SC","PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+    --f-num:"Barlow Condensed","Arial Narrow","Helvetica Neue",Arial,sans-serif;
+    --fs-xs:13px; --fs-sm:14px; --fs-base:16px; --fs-md:18px; --fs-lg:22px; --fs-xl:clamp(32px,8.5vw,46px);
+    --radius:14px; --gap:12px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#151011; --surface:#1b1415; --card:#221a1b; --ink:#f4ecea; --muted:#b3a5a2; --line:#372b2c;
+      --red:#e0293f; --red-deep:#a3132a; --red-soft:#3a1a1f; --red-ink:#ff8a98; --on-red:#ffffff;
+      --warn-bg:#2e2512; --warn-line:#c99400; --shadow:0 1px 2px rgba(0,0,0,.3),0 6px 20px rgba(0,0,0,.25);
+      color-scheme:dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#151011; --surface:#1b1415; --card:#221a1b; --ink:#f4ecea; --muted:#b3a5a2; --line:#372b2c;
+    --red:#e0293f; --red-deep:#a3132a; --red-soft:#3a1a1f; --red-ink:#ff8a98; --on-red:#ffffff;
+    --warn-bg:#2e2512; --warn-line:#c99400; --shadow:0 1px 2px rgba(0,0,0,.3),0 6px 20px rgba(0,0,0,.25);
+    color-scheme:dark;
+  }
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  body{margin:0;font-family:var(--f-body);background:var(--surface);color:var(--ink);font-size:var(--fs-base);line-height:1.75;
+    -webkit-font-smoothing:antialiased;padding-bottom:calc(88px + env(safe-area-inset-bottom,0px))}
+  h1,h2,h3{margin:0;line-height:1.3;text-wrap:balance}
+  p{margin:0}
+  img{max-width:100%;display:block}
+  b{font-weight:700}
+  button{font:inherit;cursor:pointer}
+  .wrap{max-width:720px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+  .stack{display:grid;gap:var(--gap)}
+  .hl{color:var(--red);font-weight:700}
+  .muted{color:var(--muted);font-size:var(--fs-sm)}
+
+  /* ===== 封面 ===== */
+  .hero{background:var(--red);color:var(--on-red);position:relative;overflow:hidden}
+  .hero::after{content:"";position:absolute;right:-90px;top:-90px;width:300px;height:300px;border:46px solid rgba(255,255,255,.07);border-radius:50%;pointer-events:none}
+  .hero .wrap{padding-block:36px 32px;position:relative;z-index:1;display:grid;gap:24px}
+  .eyebrow{display:flex;align-items:center;gap:10px;font-size:var(--fs-xs);font-weight:700;letter-spacing:.12em}
+  .eyebrow::before{content:"";flex:none;width:22px;height:2px;background:var(--on-red)}
+  .hero h1{font-size:var(--fs-xl);font-weight:900;margin-top:12px;letter-spacing:.01em}
+  .hero .sub{display:inline-block;margin-top:14px;background:var(--on-red);color:var(--red);font-weight:900;font-size:var(--fs-md);line-height:1.45;padding:6px 14px;border-radius:8px}
+  .hero-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:rgba(255,255,255,.25);border-radius:12px;overflow:hidden}
+  .hero-stat{background:var(--red-deep);padding:14px 6px;text-align:center;display:grid;gap:2px}
+  .hero-stat b{font-family:var(--f-num);font-weight:800;font-size:clamp(20px,6.2vw,28px);white-space:nowrap;line-height:1.1;font-variant-numeric:tabular-nums}
+  .hero-stat span{font-size:var(--fs-xs);opacity:.9;line-height:1.4}
+
+  /* ===== 板块 ===== */
+  main{counter-reset:sec}
+  section{padding-block:44px 0}
+  .sec-head{display:flex;align-items:flex-end;gap:12px;margin-bottom:18px;padding-bottom:12px;border-bottom:2px solid var(--ink)}
+  .sec-head::before{counter-increment:sec;content:counter(sec,decimal-leading-zero);font-family:var(--f-num);font-weight:800;font-size:36px;line-height:.9;color:var(--red)}
+  .sec-head h2{font-size:var(--fs-lg);font-weight:900;min-width:0;flex:1}
+  .tag{flex:none;align-self:center;font-size:var(--fs-xs);font-weight:700;color:var(--on-red);background:var(--red);padding:3px 10px;border-radius:4px;white-space:nowrap}
+  .card{background:var(--card);border-radius:var(--radius);padding:20px;min-width:0;box-shadow:var(--shadow)}
+  .card > * + *{margin-top:10px}
+  .lead{font-size:var(--fs-md);line-height:1.7}
+
+  .checks{list-style:none;padding:0;display:grid;gap:10px;margin:16px 0 0}
+  .checks li{display:flex;gap:10px;align-items:flex-start;font-weight:500}
+  .checks li::before{content:"";flex:none;width:22px;height:22px;margin-top:3px;border-radius:50%;
+    background:var(--red) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5 10.5l3 3 7-7' fill='none' stroke='white' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/14px no-repeat}
+
+  /* 社交账号 */
+  .social{margin-top:20px;padding-top:18px;border-top:1px solid var(--line)}
+  .social h3{font-size:var(--fs-base);font-weight:700}
+  .social .muted{display:block}
+  .social-links{display:grid;gap:8px;margin-top:12px}
+  .soc{display:flex;align-items:center;gap:12px;padding:12px 14px;border:1.5px solid var(--line);border-radius:12px;color:var(--ink);text-decoration:none;min-width:0}
+  a.soc:hover{border-color:var(--red)}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--warn-line);outline-offset:2px}
+  .soc .pf{flex:none;width:38px;height:38px;border-radius:10px;display:grid;place-items:center;background:var(--red);color:var(--on-red);font-weight:900;font-size:var(--fs-sm)}
+  .soc .nm{flex:1;min-width:0;display:grid;line-height:1.4}
+  .soc .nm b{font-size:var(--fs-base)}
+  .soc .nm small{color:var(--muted);font-size:var(--fs-xs);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .soc .go{flex:none;color:var(--red);font-weight:700;font-size:var(--fs-sm)}
+  .soc .lk{display:block;font-size:var(--fs-xs);color:var(--muted);word-break:break-all}
+
+  .duty{background:var(--red-soft);box-shadow:none}
+  .duty b{color:var(--red-ink)}
+
+  /* 佣金：一类一类 */
+  .courses{display:grid;gap:var(--gap)}
+  .course{background:var(--card);border:1.5px solid var(--line);border-radius:var(--radius);padding:16px 18px;min-width:0;display:grid;gap:8px}
+  .course.featured{border-color:var(--red)}
+  .course .kind{display:flex;align-items:center;gap:8px;font-size:var(--fs-xs);font-weight:700;letter-spacing:.08em;color:var(--red)}
+  .badge{background:var(--red);color:var(--on-red);padding:2px 10px;border-radius:4px;letter-spacing:.02em}
+  .course h3{font-size:var(--fs-md);line-height:1.4;font-weight:900}
+  .course-foot{display:flex;align-items:flex-end;justify-content:space-between;gap:8px 16px;flex-wrap:wrap;padding-top:10px;border-top:1.5px dashed var(--line)}
+  .course .price{display:grid;gap:2px;min-width:0}
+  .course .price small{font-size:var(--fs-xs);color:var(--muted);font-weight:500}
+  .course .price b{font-size:var(--fs-base);line-height:1.4;color:var(--ink)}
+  .commission{text-align:right;display:grid;justify-items:end;gap:2px;margin-left:auto}
+  .commission small{font-size:var(--fs-xs);color:var(--red);font-weight:700}
+  .commission strong{font-family:var(--f-num);font-size:48px;line-height:.95;font-weight:800;color:var(--red);font-variant-numeric:tabular-nums;white-space:nowrap}
+  .commission strong i{font-style:normal;font-size:22px;margin-right:2px}
+  .commission em{font-style:normal;font-size:var(--fs-xs);color:var(--muted)}
+  .course .cond{font-size:var(--fs-sm);font-weight:500;color:var(--red-ink);background:var(--red-soft);border-radius:8px;padding:8px 12px}
+
+  /* 作品滑动区 */
+  .posts-wrap{position:relative;margin-inline:-20px}
+  .posts{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:2px 20px 6px;scroll-padding-inline:20px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .posts::-webkit-scrollbar{display:none}
+  .post{flex:0 0 74%;max-width:280px;scroll-snap-align:start;display:grid;gap:8px;color:var(--ink);text-decoration:none;min-width:0}
+  .post-img{position:relative;aspect-ratio:4/5;border-radius:12px;overflow:hidden;background:var(--red);max-width:100%}
+  .post-img img{width:100%;height:100%;object-fit:cover}
+  .post-img .plat{position:absolute;left:8px;top:8px;z-index:1;background:rgba(0,0,0,.6);color:#fff;font-size:var(--fs-xs);font-weight:700;padding:2px 10px;border-radius:999px}
+  .post-img .fallback{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:16px;color:var(--on-red);font-weight:900;font-size:var(--fs-md);line-height:1.4}
+  .post-img.empty-edit{background:var(--surface);border:1.5px dashed var(--line)}
+  .post-img.empty-edit .fallback{color:var(--muted);font-size:var(--fs-sm);font-weight:500}
+  .post-cap{font-size:var(--fs-sm);line-height:1.55;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .post-go{font-size:var(--fs-xs);font-weight:700;color:var(--red)}
+  .editing .post-cap{display:block;-webkit-line-clamp:unset}
+  .editing .posts{padding-top:14px}
+  .post-dots{display:flex;justify-content:center;gap:6px;margin-top:4px}
+  .post-dots span{width:6px;height:6px;border-radius:50%;background:var(--line);transition:width .2s,background .2s}
+  .post-dots span.on{width:18px;border-radius:3px;background:var(--red)}
+  .post-nav{position:absolute;top:calc(50% - 40px);width:36px;height:36px;border-radius:50%;border:none;background:var(--card);color:var(--ink);box-shadow:var(--shadow);font-size:20px;display:none;place-items:center;z-index:3}
+  .post-nav.prev{left:6px} .post-nav.next{right:6px}
+  @media (hover:hover) and (min-width:640px){ .post-nav{display:grid} }
+  @media (prefers-reduced-motion:reduce){ .post-dots span{transition:none} }
+
+  .bonus{background:var(--red);color:var(--on-red);border-radius:var(--radius);padding:22px 20px}
+  .bonus h3{font-size:var(--fs-sm);font-weight:700;letter-spacing:.08em;opacity:.9}
+  .bonus .big{display:flex;align-items:center;gap:16px;margin:10px 0 16px;flex-wrap:wrap}
+  .bonus .big strong{font-family:var(--f-num);font-size:60px;font-weight:800;line-height:.9}
+  .bonus .big span{font-weight:700;font-size:var(--fs-base);line-height:1.5}
+  .dots{list-style:none;margin:0;padding:14px 0 0;border-top:1px solid rgba(255,255,255,.3);display:grid;gap:6px}
+  .dots li{font-size:var(--fs-sm);padding-left:16px;position:relative}
+  .dots li::before{content:"";position:absolute;left:0;top:10px;width:6px;height:6px;background:currentColor;border-radius:50%}
+
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chip{border:1.5px solid var(--ink);font-weight:700;font-size:var(--fs-sm);padding:4px 14px;border-radius:999px}
+  .steps{list-style:none;margin:0;padding:0;counter-reset:s;display:grid;gap:10px}
+  .steps li{counter-increment:s;display:flex;gap:14px;align-items:flex-start;background:var(--card);border-radius:12px;padding:14px 16px;min-width:0;box-shadow:var(--shadow)}
+  .steps li::before{content:counter(s,decimal-leading-zero);flex:none;font-family:var(--f-num);font-weight:800;font-size:24px;line-height:1.15;color:var(--red);min-width:28px}
+  .code-eg{display:inline-block;font-family:ui-monospace,Menlo,Consolas,monospace;background:var(--ink);color:var(--bg);padding:0 8px;border-radius:5px;font-weight:700;font-size:var(--fs-sm)}
+  .note{background:var(--warn-bg);border-left:3px solid var(--warn-line);border-radius:8px;font-size:var(--fs-sm);padding:12px 14px}
+  .gift{display:flex;gap:16px;align-items:center}
+  .gift .ph{flex:none;width:100px}
+  .gift > div:last-child{min-width:0;margin:0}
+  .gift h3{font-size:var(--fs-md);color:var(--red-ink);margin-bottom:4px}
+
+  /* 流量奖金 */
+  .traffic-pills{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+  .traffic-pills > div{background:var(--red);color:var(--on-red);border-radius:12px;padding:16px 8px;text-align:center;font-weight:900;font-size:var(--fs-md);line-height:1.35;display:grid;place-items:center}
+  .tiers{list-style:none;margin:0;padding:0;display:grid}
+  .tiers li{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid var(--line)}
+  .tiers li:last-child{border-bottom:none}
+  .tiers .tc{min-width:0;font-weight:500}
+  .tiers .tr{flex:none;font-family:var(--f-num);font-weight:800;font-size:28px;color:var(--red);line-height:1}
+
+  /* 照片 */
+  .ph{border-radius:12px;overflow:hidden;background:var(--surface);border:1.5px dashed var(--line);color:var(--muted);position:relative;
+    display:grid;place-items:center;text-align:center;font-size:var(--fs-xs);font-weight:500;aspect-ratio:4/3;max-width:100%;padding:8px}
+  .ph svg{width:24px;height:24px;margin:0 auto 4px;display:block;stroke:currentColor}
+  .ph.has-img{border:none;padding:0}
+  .ph img{width:100%;height:100%;object-fit:cover}
+  .hero .ph{aspect-ratio:16/10;background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.45);color:rgba(255,255,255,.85)}
+  .ph.square{aspect-ratio:1/1}
+  .gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+  .gallery .ph{aspect-ratio:3/4}
+
+  /* 结算 */
+  .settle{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .settle > div{border:1.5px solid var(--red);border-radius:10px;padding:10px;text-align:center;font-weight:700;color:var(--red-ink);font-size:var(--fs-sm)}
+  .join{background:var(--ink);color:var(--bg);border-radius:var(--radius);padding:22px 20px;display:grid;gap:6px}
+  .join h3{font-size:var(--fs-lg);font-weight:900}
+  .join p{opacity:.85}
+
+  /* 禁止事项 */
+  .rules{list-style:none;margin:0;padding:0;display:grid}
+  .rules li{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);font-weight:500}
+  .rules li:last-child{border-bottom:none}
+  .rules li::before{content:"";flex:none;width:22px;height:22px;margin-top:3px;border-radius:50%;
+    background:var(--red) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M6.5 6.5l7 7M13.5 6.5l-7 7' fill='none' stroke='white' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E") center/14px no-repeat}
+  .penalty{background:var(--red);color:var(--on-red);border-radius:10px;padding:12px 14px;font-weight:700}
+
+  /* Downline */
+  .tree{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:10px}
+  .node{border-radius:10px;padding:12px 8px;font-weight:700;font-size:var(--fs-sm);text-align:center}
+  .node.up{background:var(--red);color:var(--on-red)}
+  .node.down{background:var(--red-soft);color:var(--red-ink)}
+  .arrow{text-align:center;color:var(--red);font-size:var(--fs-xs);font-weight:700;line-height:1.3}
+  .arrow b{display:block;font-family:var(--f-num);font-size:30px;font-weight:800}
+  .warn{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+
+  /* 排行榜 */
+  .board-head{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+  .board-head h3{font-size:var(--fs-md);font-weight:900}
+  .board{list-style:none;margin:0;padding:0}
+  .board li{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}
+  .board li:last-child{border-bottom:none}
+  .rank{flex:none;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-family:var(--f-num);font-weight:800;font-size:18px;background:var(--surface);color:var(--muted)}
+  .board li:nth-child(1) .rank{background:var(--gold);color:#fff}
+  .board li:nth-child(2) .rank{background:var(--silver);color:#fff}
+  .board li:nth-child(3) .rank{background:var(--bronze);color:#fff}
+  .board .name{flex:1;font-weight:700;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .board .cnt{font-family:var(--f-num);font-weight:800;color:var(--red);font-size:26px;font-variant-numeric:tabular-nums}
+  .board .unit{font-size:var(--fs-xs);color:var(--muted)}
+  .empty{text-align:center;color:var(--muted);padding:24px 0;font-size:var(--fs-sm);border:1.5px dashed var(--line);border-radius:10px}
+
+  footer{text-align:center;color:var(--muted);font-size:var(--fs-xs);padding-block:36px 12px}
+
+  /* 底部报名条 */
+  .bar{position:fixed;left:0;right:0;bottom:0;background:var(--bg);border-top:1px solid var(--line);z-index:20;
+    padding-top:10px;padding-bottom:calc(10px + env(safe-area-inset-bottom,0px));
+    padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+  .bar .inner{max-width:688px;margin:0 auto;display:flex;align-items:center;gap:10px}
+  .bar .txt{flex:1;min-width:0;font-size:var(--fs-xs);color:var(--muted);line-height:1.4}
+  .bar .txt b{display:block;color:var(--red);font-size:var(--fs-md);font-weight:900}
+  .btn{display:inline-flex;align-items:center;justify-content:center;background:var(--red);color:var(--on-red);text-decoration:none;font-weight:700;font-size:var(--fs-base);padding:12px 20px;border-radius:10px;border:none;white-space:nowrap}
+  .btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
+  .btn:disabled{opacity:.55;cursor:default}
+
+  /* ===== 编辑模式 ===== */
+  .edit-fab{position:fixed;z-index:30;top:calc(12px + env(safe-area-inset-top,0px));right:max(12px,env(safe-area-inset-right,0px));
+    background:var(--ink);color:var(--bg);border:none;border-radius:999px;padding:8px 16px;font-size:var(--fs-sm);font-weight:700;box-shadow:var(--shadow)}
+  .edit-tip{background:var(--ink);color:var(--bg);font-size:var(--fs-sm);padding-block:10px;text-align:center}
+  .editing [contenteditable]{outline:1.5px dashed color-mix(in srgb,var(--red) 55%,transparent);outline-offset:2px;border-radius:4px;min-width:1.5em;cursor:text}
+  .editing [contenteditable]:focus{outline:2px solid var(--warn-line);background:color-mix(in srgb,var(--warn-line) 10%,transparent)}
+  .editing [contenteditable]:empty::before{content:attr(data-ph);color:var(--muted);opacity:.8}
+  .editing span[contenteditable]{display:inline-block}
+  .editing :has(> .x){position:relative}
+  .x{position:absolute;top:-10px;right:-10px;z-index:2;width:26px;height:26px;border-radius:50%;border:none;background:var(--ink);color:var(--bg);font-size:16px;line-height:1;display:grid;place-items:center}
+  .add{display:block;width:100%;margin-top:10px;padding:10px;border:1.5px dashed var(--red);border-radius:10px;background:transparent;color:var(--red);font-weight:700;font-size:var(--fs-sm)}
+  .hero .add{border-color:rgba(255,255,255,.6);color:var(--on-red)}
+  .bonus .add{border-color:rgba(255,255,255,.6);color:var(--on-red)}
+  .ph-tools{position:absolute;left:8px;right:8px;bottom:8px;display:flex;gap:6px;justify-content:center;flex-wrap:wrap}
+  .ph-tools button{border:none;border-radius:6px;padding:4px 10px;font-size:var(--fs-xs);font-weight:700;background:var(--ink);color:var(--bg)}
+  .fld{display:block;font-size:var(--fs-xs);color:var(--muted);margin-top:4px}
+  .toast{position:fixed;z-index:40;left:50%;transform:translateX(-50%);bottom:calc(90px + env(safe-area-inset-bottom,0px));background:var(--ink);color:var(--bg);
+    padding:10px 16px;border-radius:10px;font-size:var(--fs-sm);max-width:calc(100% - 32px);text-align:center}
+
+  .ph-path{position:absolute;left:8px;right:8px;bottom:8px;background:var(--ink);color:var(--bg);border-radius:6px;padding:4px 8px;font-size:var(--fs-xs);text-align:left;word-break:break-all;z-index:2}
+  .ph-path [contenteditable]{display:inline;outline-color:rgba(255,255,255,.6)}
+  :root{padding-top:env(safe-area-inset-top,0px)}
+
+  @media (min-width:640px){
+    .hero .wrap{padding-block:56px 44px}
+    .hero-top{display:grid;grid-template-columns:1.15fr 1fr;align-items:center;gap:28px}
+    .social-links{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .commission strong{font-size:56px}
+    .course{padding:18px 22px}
+    .card{padding:24px}
+    .posts-wrap{margin-inline:-24px}
+    .posts{padding-inline:24px;scroll-padding-inline:24px}
+    .post{flex-basis:42%}
+  }
+</style>
+</head>
+<body>
+<div id="app"></div>
+<script src="content.js"></script>
+<script>
+(function(){
+
+  const ORIGINAL = JSON.stringify(window.CONTENT || {});
+  let C = JSON.parse(ORIGINAL);
+  let editing = false, dirty = false, canEdit = false, busy = false;
+  
+  /* 新增项目的默认内容 */
+  const NEW = {
+    "hero.stats": { value: "数字", label: "说明" },
+    "socials": { short: "新", name: "平台名称", handle: "账号", link: "https://" },
+    "intro.posts": { img: "", platform: "Instagram", caption: "", link: "https://" },
+    "intro.paragraphs": "新的一段",
+    "intro.checks": "新的一点",
+    "commission.courses": { kind: "新类别", name: "课程名称", price: "RM0 / 单", commission: "0", badge: "", cond: "" },
+    "commission.bonus.points": "新的一点",
+    "basic.platforms": "平台",
+    "advanced.steps": "新步骤",
+    "advanced.gallery": "",
+    "tracking.steps": "新步骤",
+    "traffic.pills": "新标签",
+    "traffic.tiers": { cond: "达成条件（例如：单条 post 达到 1,000 浏览）", reward: "RM0" },
+    "settlement.channels": "新渠道",
+    "rules.items": "新条款",
+    "downline.warnings": "新说明",
+    "leaderboard.list": { name: "昵称", count: 0 }
+  };
+  const PLAIN = /(\.img|\.photo|\.giftPhoto|gallery\.\d+|\.link|\.count|\.commission|\.short|\.value|\.reward|\.percent|\.updated|\.platform)$/;
+
+  const esc = s => String(s ?? "").replace(/&/g,"&amp;").replace(/"/g,"&quot;").replace(/</g,"&lt;");
+  const get = p => p.split(".").reduce((o,k)=> o == null ? o : o[k], C);
+  const set = (p,v) => { const ks = p.split("."), last = ks.pop(); ks.reduce((o,k)=>o[k], C)[last] = v; };
+  const filled = p => { const v = get(p); return v != null && String(v).trim() !== ""; };
+  const has = p => editing || filled(p);
+
+  /* 可编辑文字 */
+  function T(p, tag = "span", cls = "", ph = "点击输入"){
+    const v = get(p) ?? "";
+    const c = cls ? ` class="${cls}"` : "";
+    if (editing) return `<${tag}${c} data-p="${p}" data-ph="${esc(ph)}" contenteditable="true" spellcheck="false">${v}</${tag}>`;
+    return `<${tag}${c}>${v}</${tag}>`;
+  }
+  const X = (path, i) => editing ? `<button type="button" class="x" data-del="${path}" data-i="${i}" aria-label="删除这一项">×</button>` : "";
+  const ADD = (path, label) => editing ? `<button type="button" class="add" data-add="${path}">＋ ${label}</button>` : "";
+  const list = path => get(path) || [];
+
+  const cam = `<svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h3l2-2.5h6L17 8h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg>`;
+  function P(p, label, cls = ""){
+    const src = get(p) || "";
+    if (!editing) return src ? `<div class="ph has-img ${cls}"><img src="${esc(src)}" alt="${esc(label)}" loading="lazy"></div>` : "";
+    const inner = src ? `<img src="${esc(src)}" alt="">` : `<span>${cam}${label}</span>`;
+    return `<div class="ph ${src ? "has-img" : ""} ${cls}">${inner}<span class="ph-path">图片：${T(p,"span","","images/文件名.jpg")}</span></div>`;
+  }
+
+  /* 作品滑动卡片 */
+  function postsBlock(){
+    const posts = list("intro.posts");
+    if (!editing && !posts.length) return "";
+    const card = (o, i) => {
+      const p = `intro.posts.${i}`;
+      const img = o.img
+        ? `<img src="${esc(o.img)}" alt="${esc(o.platform)} 作品" loading="lazy">`
+        : `<span class="fallback">${editing ? "上传作品截图 / 封面" : esc(o.platform) + "<br>点击查看"}</span>`;
+      const tools = editing ? `<span class="ph-path">图片：${T(p+".img","span","","images/文件名.jpg")}</span>` : "";
+      const media = `<div class="post-img ${editing && !o.img ? "empty-edit" : ""}">${editing ? T(p+".platform","span","plat","平台") : (o.platform ? `<span class="plat">${o.platform}</span>` : "")}${img}${tools}</div>`;
+      if (editing) return `<div class="post">${X("intro.posts",i)}${media}${T(p+".caption","p","post-cap","作品文字（可空）")}<span class="fld">原帖链接：</span>${T(p+".link","span","lk","https://")}</div>`;
+      const inner = `${media}${o.caption ? `<p class="post-cap">${o.caption}</p>` : ""}<span class="post-go">查看原帖 ›</span>`;
+      return o.link ? `<a class="post" href="${esc(o.link)}" target="_blank" rel="noopener">${inner}</a>` : `<div class="post">${inner}</div>`;
+    };
+    return `
+      <div>
+        ${T("intro.postsTitle","h3")}
+        ${T("intro.postsNote","span","muted")}
+      </div>
+      <div class="posts-wrap">
+        <button type="button" class="post-nav prev" data-nav="-1" aria-label="上一个">‹</button>
+        <div class="posts" id="posts">${posts.map(card).join("")}</div>
+        <button type="button" class="post-nav next" data-nav="1" aria-label="下一个">›</button>
+      </div>
+      ${posts.length > 1 ? `<div class="post-dots" aria-hidden="true">${posts.map((_,i)=>`<span class="${i?"":"on"}"></span>`).join("")}</div>` : ""}
+      ${ADD("intro.posts","添加作品")}`;
+  }
+
+  function bindPosts(){
+    const box = document.getElementById("posts"); if (!box) return;
+    const dots = [...document.querySelectorAll(".post-dots span")];
+    box.addEventListener("scroll", () => {
+      const cards = [...box.children].filter(c => c.classList.contains("post"));
+      if (!cards.length || !dots.length) return;
+      const x = box.scrollLeft, w = cards[0].offsetWidth + 12;
+      const k = Math.min(dots.length - 1, Math.round(x / w));
+      dots.forEach((d,j) => d.classList.toggle("on", j === k));
+    }, { passive: true });
+  }
+
+  function head(base){
+    return `<div class="sec-head">${T(base+".heading","h2","","板块标题")}${has(base+".tag") ? T(base+".tag","span","tag","标签") : ""}</div>`;
+  }
+
+  function render(){
+    document.body.classList.toggle("editing", editing);
+    const courses = list("commission.courses");
+    const board = editing ? list("leaderboard.list").map((b,i)=>({...b,i})) : [...list("leaderboard.list")].map((b,i)=>({...b,i})).sort((a,b)=>b.count-a.count);
+    const gallery = list("advanced.gallery").map((g,i)=>({g,i})).filter(o => editing || o.g);
+    const heroPhoto = has("hero.photo") ? P("hero.photo","教练形象照") : "";
+    const main = list("socials")[0];
+
+    document.getElementById("app").innerHTML = `
+    ${editing ? `<div class="edit-tip"><div class="wrap">编辑中：点任何文字直接修改，改完按底部「下载 content.js」，再上传到 GitHub</div></div>` : ""}
+    <header class="hero">
+      <div class="wrap">
+        <div class="${heroPhoto ? "hero-top" : ""}">
+          <div>
+            ${T("hero.brand","div","eyebrow")}
+            ${T("hero.title","h1")}
+            ${T("hero.subtitle","div","sub")}
+          </div>
+          ${heroPhoto}
+        </div>
+        <div>
+          <div class="hero-stats">
+            ${list("hero.stats").map((s,i)=>`<div class="hero-stat">${X("hero.stats",i)}${T(`hero.stats.${i}.value`,"b")}${T(`hero.stats.${i}.label`)}</div>`).join("")}
+          </div>
+          ${ADD("hero.stats","添加数字")}
+        </div>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <section>
+        ${head("intro")}
+        <div class="card">
+          ${postsBlock()}
+          ${list("intro.paragraphs").map((p,i)=>`<div>${X("intro.paragraphs",i)}${T(`intro.paragraphs.${i}`,"p","lead")}</div>`).join("")}
+          ${ADD("intro.paragraphs","添加段落")}
+          <ul class="checks">${list("intro.checks").map((c,i)=>`<li>${X("intro.checks",i)}${T(`intro.checks.${i}`)}</li>`).join("")}</ul>
+          ${ADD("intro.checks","添加一点")}
+          <div class="social">
+            ${T("intro.socialTitle","h3")}
+            ${T("intro.socialNote","span","muted")}
+            <div class="social-links">
+              ${list("socials").map((s,i)=> editing
+                ? `<div class="soc">${X("socials",i)}${T(`socials.${i}.short`,"span","pf")}<span class="nm">${T(`socials.${i}.name`,"b")}${T(`socials.${i}.handle`,"small")}<span class="fld">链接：</span>${T(`socials.${i}.link`,"span","lk","https://")}</span></div>`
+                : `<a class="soc" href="${esc(s.link)}" target="_blank" rel="noopener"><span class="pf">${s.short}</span><span class="nm"><b>${s.name}</b><small>${s.handle}</small></span><span class="go">查看 ›</span></a>`
+              ).join("")}
+            </div>
+            ${ADD("socials","添加账号")}
+          </div>
+        </div>
+      </section>
+
+      <section>
+        ${head("commission")}
+        <div class="stack">
+          ${T("commission.duty","div","card duty")}
+          <div class="courses">
+            ${courses.map((c,i)=>`
+              <div class="course ${c.badge ? "featured" : ""}">
+                ${X("commission.courses",i)}
+                <div class="kind">${T(`commission.courses.${i}.kind`)}${has(`commission.courses.${i}.badge`) ? T(`commission.courses.${i}.badge`,"span","badge","标签(可空)") : ""}</div>
+                ${T(`commission.courses.${i}.name`,"h3")}
+                <div class="course-foot">
+                  <div class="price"><small>课程价格</small>${T(`commission.courses.${i}.price`,"b")}</div>
+                  <div class="commission"><small>你的 commission</small><strong><i>RM</i>${T(`commission.courses.${i}.commission`,"span","","0")}</strong>${T("commission.unit","em")}</div>
+                </div>
+                ${has(`commission.courses.${i}.cond`) ? T(`commission.courses.${i}.cond`,"div","cond","附加条件(可空)") : ""}
+              </div>`).join("")}
+          </div>
+          ${ADD("commission.courses","添加课程类别")}
+          <div class="bonus">
+            ${T("commission.bonus.title","h3")}
+            <div class="big">${T("commission.bonus.amount","strong")}${T("commission.bonus.amountText")}</div>
+            <ul class="dots">${list("commission.bonus.points").map((p,i)=>`<li>${X("commission.bonus.points",i)}${T(`commission.bonus.points.${i}`)}</li>`).join("")}</ul>
+            ${ADD("commission.bonus.points","添加一点")}
+          </div>
+        </div>
+      </section>
+
+      <section>
+        ${head("basic")}
+        <div class="card">
+          ${T("basic.text","p")}
+          <div class="chips">${list("basic.platforms").map((p,i)=>`<span class="chip">${X("basic.platforms",i)}${T(`basic.platforms.${i}`)}</span>`).join("")}</div>
+          ${ADD("basic.platforms","添加平台")}
+          ${T("basic.core","p")}
+        </div>
+      </section>
+
+      <section>
+        ${head("advanced")}
+        <div class="stack">
+          <ol class="steps">${list("advanced.steps").map((s,i)=>`<li>${X("advanced.steps",i)}${T(`advanced.steps.${i}`)}</li>`).join("")}</ol>
+          ${ADD("advanced.steps","添加步骤")}
+          ${has("advanced.note") ? T("advanced.note","div","note") : ""}
+          ${gallery.length ? `<div class="gallery">${gallery.map(o=>`<div>${X("advanced.gallery",o.i)}${P(`advanced.gallery.${o.i}`,"示例图")}</div>`).join("")}</div>` : ""}
+          ${ADD("advanced.gallery","添加示例图位置")}
+        </div>
+      </section>
+
+      <section>
+        ${head("tracking")}
+        <div class="stack">
+          ${T("tracking.intro","p")}
+          <ol class="steps">${list("tracking.steps").map((s,i)=>`<li>${X("tracking.steps",i)}${T(`tracking.steps.${i}`)}</li>`).join("")}</ol>
+          ${ADD("tracking.steps","添加步骤")}
+          ${has("tracking.note") ? T("tracking.note","div","note") : ""}
+          <div class="card gift">
+            ${P("tracking.giftPhoto","装备照片","square")}
+            <div>${T("tracking.giftTitle","h3")}${T("tracking.giftText","p")}</div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        ${head("traffic")}
+        <div class="stack">
+          <div class="traffic-pills">${list("traffic.pills").map((p,i)=>`<div>${X("traffic.pills",i)}${T(`traffic.pills.${i}`)}</div>`).join("")}</div>
+          ${ADD("traffic.pills","添加标签")}
+          ${(has("traffic.desc") || list("traffic.tiers").length || editing) ? `
+          <div class="card">
+            ${has("traffic.desc") ? T("traffic.desc","p","lead","说明这个奖金怎样拿（可空）") : ""}
+            ${list("traffic.tiers").length ? `<ul class="tiers">${list("traffic.tiers").map((t,i)=>`<li>${X("traffic.tiers",i)}${T(`traffic.tiers.${i}.cond`,"span","tc")}${T(`traffic.tiers.${i}.reward`,"span","tr")}</li>`).join("")}</ul>` : ""}
+            ${ADD("traffic.tiers","添加奖金档位（条件 → 奖金）")}
+          </div>` : ""}
+          ${has("traffic.note") ? T("traffic.note","div","note","补充说明（可空）") : ""}
+        </div>
+      </section>
+
+      <section>
+        ${head("settlement")}
+        <div class="stack">
+          <div class="card">
+            ${T("settlement.title","h3")}
+            ${T("settlement.text","p")}
+            <div class="settle">${list("settlement.channels").map((c,i)=>`<div>${X("settlement.channels",i)}${T(`settlement.channels.${i}`)}</div>`).join("")}</div>
+            ${ADD("settlement.channels","添加渠道")}
+          </div>
+          <div class="join">${T("settlement.joinTitle","h3")}${T("settlement.joinText","p")}</div>
+        </div>
+      </section>
+
+      <section>
+        ${head("rules")}
+        <div class="card">
+          <ul class="rules">${list("rules.items").map((r,i)=>`<li>${X("rules.items",i)}${T(`rules.items.${i}`)}</li>`).join("")}</ul>
+          ${ADD("rules.items","添加条款")}
+          ${T("rules.penalty","div","penalty")}
+        </div>
+      </section>
+
+      <section>
+        ${head("downline")}
+        <div class="stack">
+          <div class="card">
+            <div class="tree">
+              <div class="node up">你（上线）</div>
+              <div class="arrow"><b>+${editing ? T("downline.percent") : esc(C.downline.percent)}</b>该单售价</div>
+              <div class="node down">Downline close 单</div>
+            </div>
+            ${T("downline.text","p")}
+            <ul class="warn">${list("downline.warnings").map((w,i)=>`<li class="note">${X("downline.warnings",i)}${T(`downline.warnings.${i}`)}</li>`).join("")}</ul>
+            ${ADD("downline.warnings","添加说明")}
+          </div>
+          <div class="card">
+            <div class="board-head">${T("leaderboard.title","h3")}<span class="muted">更新于 ${T("leaderboard.updated","span","","日期")}</span></div>
+            ${board.length ? `<ul class="board">${board.map((b,r)=>`
+              <li>${X("leaderboard.list",b.i)}<span class="rank">${r+1}</span>${T(`leaderboard.list.${b.i}.name`,"span","name","昵称")}<span>${T(`leaderboard.list.${b.i}.count`,"span","cnt","0")} <span class="unit">单</span></span></li>`).join("")}</ul>`
+              : `${T("leaderboard.empty","div","empty")}`}
+            ${ADD("leaderboard.list","添加一位 Sales Partner")}
+            ${T("leaderboard.note","p","muted")}
+          </div>
+        </div>
+      </section>
+      ${editing ? `
+      <section>
+        <div class="card">
+          <h3>底部报名条（手机下方固定显示）</h3>
+          <div><span class="fld">小字</span>${T("bar.line1","div")}</div>
+          <div><span class="fld">红色大字</span>${T("bar.line2","div")}</div>
+          <div><span class="fld">按钮文字</span>${T("bar.button","div")}</div>
+          <div><span class="fld">按钮链接（例如 WhatsApp）</span>${T("bar.link","div","lk","https://")}</div>
+        </div>
+      </section>` : ""}
+    </main>
+
+    ${T("footer","footer","wrap")}
+    ${editing
+      ? `<div class="bar"><div class="inner"><div class="txt">编辑模式<b>改完下载，再上传 GitHub</b></div><button type="button" class="btn ghost" data-act="cancel">取消</button><button type="button" class="btn" data-act="save">下载 content.js</button></div></div>`
+      : `<div class="bar"><div class="inner"><div class="txt">${C.bar.line1}<b>${C.bar.line2}</b></div><a class="btn" href="${esc(C.bar.link || (main ? main.link : "#"))}" target="_blank" rel="noopener">${C.bar.button}</a></div></div>
+         `}
+    `;
+    bindPosts();
+  }
+
+  /* 把页面上改过的文字写回资料 */
+  function collect(){
+    document.querySelectorAll("[data-p]").forEach(el => {
+      const p = el.dataset.p;
+      let v;
+      if (p.endsWith(".count")) v = parseInt(el.textContent.replace(/[^\d]/g,""), 10) || 0;
+      else if (PLAIN.test(p)) v = el.textContent.replace(/ /g," ").trim();
+      else v = el.innerHTML.replace(/&nbsp;/g," ").replace(/<div>/gi,"<br>").replace(/<\/div>/gi,"").replace(/^(\s*<br\s*\/?>)+|(<br\s*\/?>\s*)+$/gi,"").trim();
+      set(p, v);
+    });
+  }
+
+  function toast(msg, ms = 3200){
+    document.querySelectorAll(".toast").forEach(t => t.remove());
+    const t = document.createElement("div"); t.className = "toast"; t.textContent = msg; t.setAttribute("role","status");
+    document.body.appendChild(t); if (ms) setTimeout(() => t.remove(), ms);
+  }
+
+  /* 下载新的 content.js，再上传到 GitHub 覆盖旧文件 */
+  function save(){
+    collect();
+    const txt = "/* ================================================================\n   小风减脂 招募页 —— 网站内容\n   想改文字：直接改引号 \"…\" 里面的字，不要删掉引号和逗号。\n   最简单的方法：打开网站，网址后面加 #edit 进入编辑模式，改完下载新的 content.js 再上传。\n   ================================================================ */\nwindow.CONTENT = " + JSON.stringify(C, null, 2) + ";\n";
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(new Blob([txt], { type: "text/javascript" }));
+    a.download = "content.js";
+    document.body.appendChild(a); a.click(); a.remove();
+    dirty = false;
+    toast("已下载 content.js，请上传到 GitHub 覆盖旧的文件", 7000);
+  }
+
+  document.addEventListener("click", e => {
+    const b = e.target.closest("button"); if (!b) return;
+    if (b.dataset.act === "edit"){ editing = true; render(); window.scrollTo({ top: 0 }); return; }
+    if (b.dataset.act === "cancel"){
+      if (dirty && !document.querySelector(".confirm-cancel")){ b.classList.add("confirm-cancel"); b.textContent = "确定放弃修改？"; return; }
+      C = JSON.parse(ORIGINAL); editing = false; dirty = false; if (location.hash === "#edit") history.replaceState(null, "", location.pathname + location.search); render(); return;
+    }
+    if (b.dataset.act === "save"){ save(); return; }
+    if (b.dataset.nav){ const box = document.getElementById("posts"); const c = box && box.querySelector(".post"); if (c) box.scrollBy({ left: (+b.dataset.nav) * (c.offsetWidth + 12), behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" }); return; }
+    if (b.dataset.del){ collect(); list(b.dataset.del).splice(+b.dataset.i, 1); dirty = true; render(); return; }
+    if (b.dataset.add){ collect(); list(b.dataset.add).push(JSON.parse(JSON.stringify(NEW[b.dataset.add] ?? ""))); dirty = true; render(); return; }
+    if (b.dataset.rm){ collect(); set(b.dataset.rm, ""); dirty = true; render(); return; }
+  });
+  document.addEventListener("input", e => { if (e.target.closest && e.target.closest("[contenteditable]")) dirty = true; });
+  document.addEventListener("paste", e => {
+    const el = e.target.closest && e.target.closest("[contenteditable]"); if (!el) return;
+    e.preventDefault();
+    const text = (e.clipboardData || window.clipboardData).getData("text/plain");
+    document.execCommand("insertText", false, text);
+  });
+  window.addEventListener("beforeunload", e => { if (editing && dirty && !busy){ e.preventDefault(); e.returnValue = ""; } });
+
+  render();
+
+  /* 网址后面加 #edit 进入编辑模式 */
+  function checkHash(){ canEdit = location.hash === "#edit"; if (canEdit && !editing){ editing = true; render(); } }
+  window.addEventListener("hashchange", checkHash);
+  checkHash();
+})();
+</script>
+</body>
+</html>
